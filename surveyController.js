@@ -77,11 +77,11 @@ module.exports = function(app){
     // TODO // need to add a post request for data that the index.html carries
 
     app.post('/',urlencodedParser,(req,res)=>{
-        console.log(req.body);
+        // console.log(req.body);
         let json = req.body;
 
         for (let key in json) {
-            console.log(key+"::::: "+json[key]);
+            // console.log(key+"::::: "+json[key]);
             if(key == "ease" || key == "feature" || key == "functionality" || key == "design") {
                 processData(key,json[key]);
             }
