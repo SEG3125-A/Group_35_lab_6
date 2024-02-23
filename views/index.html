@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sushi Shop UI Survey</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sushi Shop UI Survey</h1>
+        <a id="analysis" href="/analysis">Analysis</a>
+    </header>
+
+    <div class="container">
+
+
+        <div class="presentation">
+            <div class="presentation-content">
+                <p id="welcome">Welcome to,</p>
+                <p>This UI survey, you will be reviewing the UI of the sushi shop's website </p>
+                <p>Click the link below to check their website, or tap the picture on the right </p>
+                <a href="https://sushishop.com/" id="ui-link"> Visit the website</a>
+                <p style="font-size: small;">To move to the survey, scroll down or click <a href="#survey-start"
+                        id="move-to-survey">HERE</a></p>
+
+            </div>
+            <div class="presentation-content" id="website-picture">
+                <a href="https://sushishop.com/">
+                    <img src="/img/sushiMain3.png" alt="sushishop homepage" width="68%">
+                </a>
+            </div>
+
+        </div>
+
+        <!--   this design is inspired by w3schools' responsive gallery     
+                source: https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp-->
+        <div class="gallery">
+            <h2 class="subtitle">More pictures</h2>
+            <div class="row">
+                <div class="column">
+                    <img src="/img/sushiMain3.png" alt="Homepage">
+                    <img src="/img/sushiMenu.png" alt="Location page">
+                    <img src="/img/sushiOrder.png" alt="Order page">
+                </div>
+                <div class="column">
+                    <img src="/img/sushiMain2.png" alt="Homepage">
+                    <img src="/img/sushiLocation.png" alt="Menu page">
+                    <img src="/img/sushiDropdown.png" alt="Webmenu dropdown">
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="surveyForm" id="survey-start">
+            <h2 class="subtitle">Survey starts here:</h2>
+            <br><br>
+            <form>
+                <div class="question">
+                    <subh>1. Did you find the website easy to use overall?</subh>
+                    <input type="radio" id="Yes" name="ease" value="Yes">Yes<br>
+                    <input type="radio" id="No" name="ease" value="No">No<br>
+                </div>
+                <div class="question">
+                    <subh for="user-experience">2. When Navigating the site what features do you usually search for?
+                    </subh>
+                    <input type="text" id="user-experience" name="feature">
+                </div>
+                <div class="question">
+                    <subh>3. Rate the Overall Functionality of the website</subh>
+                    <select id="design-appeal" name="functionality">
+                        <option value="Amazing">Amazing</option>
+                        <option value="Great">Great</option>
+                        <option value="Workable">Workable</option>
+                        <option value="Confusing">Confusing</option>
+                        <option value="Unusable">Unusable</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <subh>4. Rate the Overall Design of the website</subh>
+                    <select id="design-appeal" name="design">
+                        <option value="Stunning">Stunning</option>
+                        <option value="Good">Good</option>
+                        <option value="Average">Average</option>
+                        <option value="Poor">Poor</option>
+                        <option value="Horrific">Horrific</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <subh>5. What features did you find useful on the site? (select all that apply)</subh>
+                    <input type="checkbox" id="Search Bar" name="feature" value="Search Bar">Search Bar<br>
+                    <input type="checkbox" id="Hyperlinks" name="feature" value="Hyperlinks">HyperLinks<br>
+                    <input type="checkbox" id="AI Assistant" name="feature" value="AI Assistant">AI Assistant<br>
+                    <input type="checkbox" id="Task Bar" name="feature" value="Task Bar">Task Bar<br>
+                    <input type="checkbox" id="Interactive Image" name="feature" value="Interactive Images">Interactive
+                    images<br>
+                </div>
+                <div class="question">
+                    <subh for="user-experience">6. Any additional functions that are not listed?</subh>
+                    <input type="text" id="user-experience" name="additional">
+                </div>
+                <div class="question">
+                    <subh for="user-experience">7. Any additional Comments?</subh>
+                    <input type="text" id="user-experience" name="comment">
+
+                </div>
+
+                <div class="submit-area">
+                    <input type="submit" onclick="alert('Thanks for your submission!')" value="SUBMIT SURVEY"  id="submit">
+                </div>
+            </form>
+
+        </div>
+        <footer>
+            <p id="credits">Website designed by: Lolita I., David M., Leon L., Amani L.</p>
+        </footer>
+        <script src="/js/action.js"></script>
+</body>
+
+</html>
