@@ -21,9 +21,9 @@ function readData(fileName){
 
 // read the data file
 function writeData(info, fileName){
-    console.log("before info is",info);
+    // console.log("before info is",info);
     data = JSON.stringify(info);
-    console.log("after info is",data);
+    // console.log("after info is",data);
     // same problem between writeFileSync and writeFile. 
     fs.writeFileSync('./data/' + fileName + '.json', data);
 }
@@ -38,10 +38,10 @@ function writeData(info, fileName){
 
 const processData = (key,value)=>{
     let data = readData(key);
-    console.log("the data is",data);
+    // console.log("the data is",data);
     let flag = 0;
     for (let i = 0;i<data.length;i++){
-        console.log("the item is",data[i]);
+        // console.log("the item is",data[i]);
         if (data[i].res == value) {
             data[i].count +=1;
             // found an entry
