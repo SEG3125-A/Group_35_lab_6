@@ -4,9 +4,6 @@ $(document).ready(function(){
     // console.log("waiting");
 
     $('form').on('submit', function(){
-        
-        // const item = $('form input');
-        // console.log(item.serializeArray());
   
         $.ajax({
           type: 'POST',
@@ -17,3 +14,26 @@ $(document).ready(function(){
     });
   });
   
+
+  //inspired by https://stackoverflow.com/questions/6218494/using-the-html5-required-attribute-for-a-group-of-checkboxes
+  function deRequire(box) {
+    el = document.getElementsByClassName(box);
+  
+    var atLeastOneChecked = false; //at least one is checked
+    for (i = 0; i < el.length; i++) {
+      if (el[i].checked === true) {
+        atLeastOneChecked = true;
+      }
+    }
+  
+    if (atLeastOneChecked === true) {
+      for (i = 0; i < el.length; i++) {
+        el[i].required = false;
+      }
+    } else {
+      for (i = 0; i < el.length; i++) {
+        el[i].required = true;
+      }
+    }
+  }
+
