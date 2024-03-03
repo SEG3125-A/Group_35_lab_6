@@ -1,19 +1,29 @@
 // jQuery that will "listen" to the index.html
 $(document).ready(function(){
 
-    // console.log("waiting");
+    console.log("waiting");
 
-    $('form').on('submit', function(){
-        
-        // const item = $('form input');
-        // console.log(item.serializeArray());
+    $('#surveyForm').on('submit', function(){
+      //event.preventDefault(); // Prevent the default form submission.
+         //const item = $('form input');
+         //console.log(item.serializeArray());
   
         $.ajax({
           type: 'POST',
           url: '/',
-          data: $(this).serializeArray()
+          data: $(this).serializeArray(),
+          success: function(response) {
+            // Handle success.
+            console.log('Form submitted successfully.');
+            alert('Thanks for your submission!');
+        },
+        error: function(xhr, status, error) {
+            // Handle error. 
+            console.error('Form submission failed:', error);
+        }
         });
-        return false;
+      
+       // return false;
     });
   });
   

@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 // Middleware
 // static file serving, so that css and images will be correctly loaded
-app.use(express.static('public'));
+app.use('/public',express.static('public'));
 
 
 //fire function from surveyController

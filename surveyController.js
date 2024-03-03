@@ -63,29 +63,55 @@ module.exports = function(app){
 
     // when a user goes to localhost:3000/
     // serve a static html (the survey itself to fill in)
-    app.get('/', function(req, res){
+    app.get('/index', function(req, res){
         // It was sendFile
         res.sendFile('/views/index.html',{root:__dirname});
     });
 
 
-    app.get('/analysis', function(req, res){
-        // It was sendFile
-        res.sendFile('/views/analysis.html',{root:__dirname});
+    app.get('/analysis', async (req, res) => {
+        try {
+            // Paths to to JSON files to read
+            const files = [
+                'data/design.json',
+                'data/ease.json',
+                'data/feature.json',
+                'data/functionality.json'
+            ];
+
+            //This part load all the files before rendering to the analysis.ejs
+    
+            const fileContents = await Promise.all(files.map(file => fs.readFileSync(file, 'utf8')));
+
+            const analysisData = fileContents.map((data, index) => {
+                const labels = ["Design Ratings", "Ease of use", "Useful Feature", "Functionality Rating"];
+                return {
+                    label: labels[index],
+                    data: JSON.parse(data)
+                };
+            });
+
+            res.render('analysis', { analysisData });
+        } catch (err) {
+            console.error("Error reading data files", err);
+            res.status(500).send('Error reading data files');
+        }
     });
 
     // TODO // need to add a post request for data that the index.html carries
 
-    app.post('/',urlencodedParser,(req,res)=>{
+    app.post('/index',urlencodedParser,(req,res)=>{
         // console.log(req.body);
         let json = req.body;
+        
 
         for (let key in json) {
-            // console.log(key+"::::: "+json[key]);
+            console.log(key+"::::: "+json[key]);
             if(key == "ease" || key == "feature" || key == "functionality" || key == "design") {
                 processData(key,json[key]);
             }
-        }
+        } 
+         
     })
 
     // 404 page, should always be at the bottom

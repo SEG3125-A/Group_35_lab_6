@@ -1,0 +1,50 @@
+<!-- views/analysis.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Analysis</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Optional: Link to any CSS files -->
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <h1>Data Analysis</h1>
+    <div id="data-container">
+        <% analysisData.forEach(function(category) { %>
+            <h2 class="category-heading"><%= category.label %></h2>
+            <% category.data.forEach(function(item) { %>
+                <div class="result-item">
+                    <%= item.res %> : Count: <%= item.count %>
+                </div>
+            <% }); %>
+        <% }); %>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('.category-heading').css({
+                'color': 'black',
+                'margin-bottom': '10px',
+                'border-bottom': '10px solid #bce8f1',
+                'margin-left': 'auto',
+                'margin-right': 'auto',
+                'width': '50%'
+    
+            });
+
+            // Apply styles to result items
+            $('.result-item').css({
+                'background-color': 'grey',
+                'padding': '15px 20px',
+                'border-left':'80px',
+                'border-radius': '5px',
+                'width': 'fit-content',
+                'margin-left': 'auto',
+                'margin-right': 'auto',
+                'width': '50%', // Make the width fit the content
+                'display': 'block' // Display block to allow for margin auto to work
+            });
+        });
+    </script>
+</body>
+</html>

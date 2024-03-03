@@ -17,7 +17,7 @@ body {
     font-family: Calibri;
     /* background-color: #f4f4f4; */
     color: white;
-    background-image: url("/img/background3.jpg");
+    background-image: url("../img/background3.jpg");
     background-size:cover;
     background-repeat: no-repeat;
 
@@ -48,7 +48,9 @@ h1 {
     border-radius: 25px;
     padding: 5px;
     border-color: white;
-    display: inline-block;
+    display: block;
+    width: fit-content; /* Or a specific width */
+    margin: 0 auto; /* Top and bottom margins 0, left and right margins auto */
     margin-top: 5px;
     margin-left: 30%;
     margin-right: 30%;
