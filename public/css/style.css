@@ -5,13 +5,6 @@
     box-sizing: border-box;
 }
 
-#analysis {
-    background-color: #ddd;
-    padding: 1rem;
-    border-radius: 1px;
-    text-decoration: none;
-    color: black;
-}
 
 body {
     font-family: Calibri;
@@ -198,6 +191,16 @@ a {
 
 /*Survey design starts here*/
 .surveyF {
+    width: 60%;
+    margin-top: 100px;
+    margin-left: 20%;
+    margin-right:  20%;
+    background-color: grey;
+    padding: 30px 50px; 
+    border-radius: 10px;
+}
+
+.surveyForm {
     width: 60%;
     margin-top: 100px;
     margin-left: 20%;

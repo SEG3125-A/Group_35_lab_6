@@ -200,6 +200,17 @@ a {
     border-radius: 10px;
 }
 
+.surveyForm {
+    width: 60%;
+    margin-top: 100px;
+    margin-left: 20%;
+    margin-right:  20%;
+    background-color: grey;
+    padding: 30px 50px; 
+    border-radius: 10px;
+}
+
+
 .question {
     margin-bottom: 20px;
     padding: 10px;
