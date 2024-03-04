@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #132043;
+    background-color: grey;
     height:100px;
     padding-left: 10px;
     padding-right: 10px; 
@@ -65,7 +65,7 @@ a {
     margin-top: 60px;
     margin-bottom: 70px;
     padding: 20px;
-    background-color: #1F4172;
+    background-color: grey;
     display: flex;
     flex-wrap: wrap;
     /* flex-direction: column; */
@@ -131,7 +131,7 @@ a {
     display: inline-block;
     margin-left: 42%;
     margin-bottom: 10px;
-    background-color: #132043;
+    background-color: grey;
     border-style: solid;
     border-radius: 30px;;
     padding: 10px;
@@ -195,7 +195,7 @@ a {
     margin-top: 100px;
     margin-left: 20%;
     margin-right:  20%;
-    background-color: #1F4172;
+    background-color: grey;
     padding: 30px 50px; 
     border-radius: 10px;
 }
@@ -254,7 +254,6 @@ input[type="checkbox"] {
 footer {
     text-align: center;
     margin-top: 20px;
-    background-color: black;
 }
 
 footer p {
@@ -958,12 +957,7 @@ progress {
   margin-bottom: 0;
 }
 
-.blockquote-footer {
-  margin-top: -1rem;
-  margin-bottom: 1rem;
-  font-size: 0.875em;
-  color: #6c757d;
-}
+
 .blockquote-footer::before {
   content: "— ";
 }
@@ -12308,12 +12302,4 @@ body {
   color: #7D4F50;
   background-color: #fff;
 }
-
-.footer {
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
-  padding: 2rem;
-  width: 100%;
-  font-size: 1.5em;
-}/*# sourceMappingURL=custom.css.map */
+/*# sourceMappingURL=custom.css.map */
