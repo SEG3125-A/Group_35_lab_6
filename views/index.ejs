@@ -1,0 +1,128 @@
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sushi Shop UI Survey</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sushi Shop UI Survey</h1>
+        <a id="analysis" href="/analysis">Analysis</a>
+    </header>
+
+    <div class="container">
+
+
+        <div class="presentation">
+            <div class="presentation-content">
+                <p id="welcome">Welcome to,</p>
+                <p>This UI survey, you will be reviewing the UI of the sushi shop's website </p>
+                <p>Click the link below to check their website, or tap the picture on the right </p>
+                <a href="https://sushishop.com/" id="ui-link"> Visit the website</a>
+                <p style="font-size: small;">To move to the survey, scroll down or click <a href="#survey-start"
+                        id="move-to-survey">HERE</a></p>
+
+            </div>
+            <div class="presentation-content" id="website-picture">
+                <a href="https://sushishop.com/">
+                    <img src="/img/sushiMain3.png" alt="sushishop homepage" width="68%">
+                </a>
+            </div>
+
+        </div>
+
+        <!--   this design is inspired by w3schools' responsive gallery     
+                source: https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp-->
+        <div class="gallery">
+            <h2 class="subtitle">More pictures</h2>
+            <div class="row">
+                <div class="column">
+                    <img src="/img/sushiMain3.png" alt="Homepage">
+                    <img src="/img/sushiMenu.png" alt="Location page">
+                    <img src="/img/sushiOrder.png" alt="Order page">
+                </div>
+                <div class="column">
+                    <img src="/img/sushiMain2.png" alt="Homepage">
+                    <img src="/img/sushiLocation.png" alt="Menu page">
+                    <img src="/img/sushiDropdown.png" alt="Webmenu dropdown">
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="surveyForm" id="survey-start">
+            <h2 class="subtitle">Survey starts here:</h2>
+            <br><br>
+            <form id="form">
+                <div class="question">
+                    <subh>1. Did you find the website easy to use overall?</subh>
+                    <input class="rad" type="radio" id="Yes" name="Q1" value="Yes" onclick='deRequire("rad")' required>Yes<br>
+                    <input class="rad" type="radio" id="No" name="Q1" value="No" onclick='deRequire("rad")' required>No<br>
+                </div>
+                <div class="question">
+                    <subh for="user-experience">2. When Navigating the site what features do you usually search for?
+                    </subh>
+                    <input type="text" id="user-experience" name="Q2" required>
+                </div>
+                <div class="question">
+                    <subh>3. Rate the Overall Functionality of the website</subh>
+                    <select id="design-appeal" name="Q3" required>
+                        <option value="">Select an Option</option>
+                        <option value="Amazing">Amazing</option>
+                        <option value="Great">Great</option>
+                        <option value="Workable">Workable</option>
+                        <option value="Confusing">Confusing</option>
+                        <option value="Unusable">Unusable</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <subh>4. Rate the Overall Design of the website</subh>
+                    <select id="design-appeal" name="Q4" required>
+                        <option value="" >Select an Option</option>
+                        <option value="Stunning">Stunning</option>
+                        <option value="Good">Good</option>
+                        <option value="Average">Average</option>
+                        <option value="Poor">Poor</option>
+                        <option value="Horrific">Horrific</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <subh>5. What features did you find useful on the site? (select all that apply)</subh>
+                    <input class="box" type="checkbox" id="Search Bar" name="Q5" value="Search Bar" onclick='deRequire("box")' required>Search Bar<br>
+                    <input class="box" type="checkbox" id="Hyperlinks" name="Q5" value="Hyperlinks" onclick='deRequire("box")' required>HyperLinks<br>
+                    <input class="box" type="checkbox" id="AI Assistant" name="Q5" value="AI Assistant" onclick='deRequire("box")' required>AI Assistant<br>
+                    <input class="box" type="checkbox" id="Task Bar" name="Q5" value="Task Bar" onclick='deRequire("box")' required>Task Bar<br>
+                    <input class="box" type="checkbox" id="Interactive Image" name="Q5" value="Interactive Images" onclick='deRequire("box")' required>Interactive
+                    images<br>
+                </div>
+                <div class="question">
+                    <subh for="rating">6.How would you rate the website on a scale of 1 to 10?</subh>
+                    <input type="number" id="rating" min="1" max="10" name="Q6" required>
+                </div>
+                <div class="question">
+                    <subh for="color">7. Select the color you wished this website was designed with? (leave the color if you do not care about the color)</subh>
+                    <input type="color" id="color" value="#000000" name="Q7">
+
+                </div>
+
+                <div class="submit-area">
+                    <input type="submit" value="submit"  id="submit">
+                    <!-- <button>Submit</button> -->
+                </div>
+            </form>
+
+        </div>
+        <footer>
+            <p id="credits">Website designed by: Lolita I., David M., Leon L., Amani L.</p>
+        </footer>
+        <script src="/js/action.js"></script>
+</body>
+
+</html>
