@@ -70,6 +70,12 @@ module.exports = function(app){
         res.render('index');
     });
 
+    app.get('/index', function(req, res){
+        // It was sendFile
+        //res.sendFile('/views/index.html',{root:__dirname});
+        res.render('index');
+    });
+
     // serve the analysis page when user goes at localhost:3000/analysis
     app.get('/analysis', function(req, res){
         // It was sendFile
